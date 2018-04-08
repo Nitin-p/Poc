@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+
+
+  <div class="row">
+
+    <div class="col-sm-6">
+
+
+        <label for="comment">Enter JSON DATA:</label>
+        <textarea class="form-control" [(ngModel)]="jsonDataField"  rows="5" id="comment"></textarea>
+
+        <button type="submit"   (click)="onSubmit()" class="btn btn-default">Submit</button>
+
+    </div>
+
+  </div>
+  <div class="row"  >
+    <div class="progress" *ngIf="progressShow">
+      <div class="progress-bar progress-bar-striped active" role="progressbar"
+           aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+       {{ 'Processing it may take servel mintues' }}
+      </div>progressShow
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Balance</th>
+      <th>Age</th>
+      <th>Result</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="success" *ngFor="let person of listOfPerson">
+      <td>{{person['name'].first}} {{person['name'].last}}</td>
+      <td>{{person['email']}}</td>
+      <td>{{person['balance']}}</td>
+      <td>{{person['age']}}</td>
+      <td>{{person['result']}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+</div>
+
+
